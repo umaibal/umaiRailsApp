@@ -1,5 +1,8 @@
 class CreateRestaurants < ActiveRecord::Migration[5.1]
-  def change
+
+  # using the up/down methods instead of change method
+
+  def up
     create_table :restaurants do |t|
       t.string :name
       t.string :address
@@ -11,5 +14,14 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    add_column :restaurants, :menu, :string
   end
+
+  def down
+    remove_column :restaurants, :menu
+
+    drop_table :restaurants
+  end
+
 end
