@@ -7,5 +7,14 @@ class Restaurant < ApplicationRecord
   validates :cuisineType, presence: true, length: {maximum: 75}
   validates :table_id, length: {minimum: 1}
 
-  has_many :table
+  has_many :tables
+
+    def self.highlyReviewedRestos
+      # Get restaurants that are within a certain rating range
+      Restaurant.select(:name, :address, :review)
+                .where("review > ?", 4)
+                .order("name ASC")
+    end
+
+
 end
