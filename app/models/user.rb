@@ -19,28 +19,4 @@ class User < ApplicationRecord
         .limit(2)
   end
 
-  def self.usersWhoBookedTables
-    # method that returns all users who have booked a table
-    User.select(:firstName, :lastName)
-        .where.not(reservation_id: nil)
-        .order(:id)
-  end
-
-  def self.updateGuestNum
-    # update some records in the existing DB
-     User.select("reservations.num_guests")
-         .joins("INNER JOIN reservations ON reservations.user_id = user.id")
-         .where("reservations.num_guests = ?", 2)
-         .limit(1)
-         .update_all(num_guests: 7)
-  end
-
-  def self.queryUsersWhoBookedFour
-    # Get all users who have reserved a seat for four or more people at a restaurant
-    User.select(:firstName, :lastName)
-        .joins("INNER JOIN reservations ON reservations.user_id = users.id")
-        .where("reservations.table_id IS NOT NULL AND reservations.num_guests >= 4")
-        .all
-  end
-
 end

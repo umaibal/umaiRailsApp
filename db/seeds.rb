@@ -19,8 +19,7 @@ u1 = User.create!(username: 'foodie27',
   email: 'umai.balendra@gmail.com',
   address: '123 Toronto Road',
   phoneNum: '6472242305',
-  paymentMethod: 'Visa Debit',
-  reservation_id: 1)
+  paymentMethod: 'Visa Debit')
 
   u1.save
 
@@ -72,20 +71,17 @@ u1 = User.create!(username: 'foodie27',
 
       # Make some Tables:
       t1 =  Table.create!(seats: 2,
-        restaurant_id: r1.id,
-        reservation_id: s1.id)
+        restaurant_id: r1.id)
 
         t1.save
 
         t2 =  Table.create!(seats: 2,
-          restaurant_id: r2.id,
-          reservation_id: s2.id)
+          restaurant_id: r2.id)
 
           t2.save
 
           t3 = Table.create!(seats: 8,
-            restaurant_id: r1.id,
-            reservation_id: s3.id)
+            restaurant_id: r1.id)
 
             t3.save
 

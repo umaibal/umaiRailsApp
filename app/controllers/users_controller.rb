@@ -8,18 +8,6 @@ class UsersController < ApplicationController
     @users = User.mastercardUsersAndCount
   end
 
-  def query2
-    @users = User.usersWhoBookedTables
-  end
-
-  def query3
-    @users = User.updateGuestNum
-  end
-
-  def query4
-    @users = User.queryUsersWhoBookedFour
-  end
-
   def index
     @users = User.all
   end

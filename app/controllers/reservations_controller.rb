@@ -3,6 +3,19 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   # GET /reservations.json
+
+  def query2
+    @reservation = Reservation.usersWhoBookedTables
+  end
+
+  def query3
+    @reservation = Reservation.updateGuestNum
+  end
+
+  def query4
+    @reservation = Reservation.queryUsersWhoBookedFour
+  end
+
   def query6
     @reservation = Reservation.restosAndUsersInHollywood
   end
