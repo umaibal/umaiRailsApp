@@ -3,9 +3,9 @@ class Table < ApplicationRecord
   validates :restaurant_id, presence: true
   validates :user_id, presence: true
 
-  belongs_to :restaurants, optional: true
-  belongs_to :users, optional: true
-
+  belongs_to :restaurants
+  # belongs_to :users, optional: true
+  has_many :users, through: :reservations
 
   def self.restosAndUsersInHollywood
 

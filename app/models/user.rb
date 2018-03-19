@@ -7,7 +7,9 @@ class User < ApplicationRecord
   validates :phoneNum, presence: true, numericality: true
   validates :paymentMethod, presence: true
 
-  has_many :tables
+  # has_many :tables
+  has_many :tables, through: :reservations
+
 
   def self.mastercardUsersAndCount
     #method that returns first two users that use mastercard for their payments
