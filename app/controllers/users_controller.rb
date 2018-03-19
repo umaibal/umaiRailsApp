@@ -3,6 +3,23 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+  def query1
+    @users = User.mastercardUsersAndCount
+  end
+
+  def query2
+    @users = User.usersWhoBookedTables
+  end
+
+  def query3
+    @users = User.updateTableSeats
+  end
+
+  def query4
+    @users = User.queryUsersWhoBookedTables
+  end
+
   def index
     @users = User.all
   end

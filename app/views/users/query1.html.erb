@@ -1,0 +1,8 @@
+<h1>User Query1</h1>
+
+
+<% @users.each do |user| %>
+<p>
+<%= "#{user.id}, #{user.username}, #{user.firstName}, #{user.lastName}, #{user.mastercardHoldersCount}" %>
+</p>
+<% end %>

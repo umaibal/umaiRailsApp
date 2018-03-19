@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'table/query6'
-
-  get 'restaurant/query5'
-
-  get 'user/query1'
 
   get 'users/edit'
   get 'users/index'
   get 'users/new'
   get 'users/show'
+  get 'users/query1'
+  get 'users/query2'
+  get 'users/query3'
+  get 'users/query4'
+
+  get 'tables/query6'
+
+  get 'restaurants/query5'
 
 
   resources :users

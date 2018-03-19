@@ -11,14 +11,6 @@
 <p>Phone Number: <%=h @user.phoneNum %></p>
 <p>Payment Method: <%=h @user.paymentMethod %></p>
 
-<p>Testing query result:<%=h @user.usersWhoBookedTables %></p>
-
-<!-- <% @products.each do |product| %>
-Product Name: <%= product.name %>
-Product Income: <%= product.income %>
-Product Cost: <%= product.cost %>
-Product Profit: <%= product.profit %>
-<% end %> -->
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
