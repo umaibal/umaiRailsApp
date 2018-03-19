@@ -9,4 +9,21 @@ class Reservation < ApplicationRecord
   belongs_to :users
   belongs_to :tables
 
+  def self.restosAndUsersInHollywood
+    # select users and restaurants where the address contains the word hollywood
+
+    Reservation.select("users.firstName, restaurants.name")
+               .joins("INNER JOIN users ON users.id = reservations.user_id")
+               .joins("INNER JOIN restaurants ON restaurants.table_id = reservations.table_id")
+               .where("users.address LIKE ? AND restaurants.address LIKE ?", "%Hollywood%", "%Hollywood%")
+
+    # Find by SQL syntax:
+    # Reservation.find_by_sql(["SELECT users.firstName, restaurants.name reservations
+    #       JOIN users ON users.id = reservations.user_id
+    #       JOIN restaurants ON restaurants.id = reservations.user_id
+    #       WHERE users.address LIKE ? AND restaurants.address LIKE ?",
+    #       "%Hollywood%", "%Hollywood%"])
+
+  end
+
 end

@@ -3,6 +3,10 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   # GET /reservations.json
+  def query6
+    @reservation = Reservation.restosAndUsersInHollywood
+  end
+
   def index
     @reservations = Reservation.all
   end

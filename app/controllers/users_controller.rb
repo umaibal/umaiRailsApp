@@ -13,11 +13,11 @@ class UsersController < ApplicationController
   end
 
   def query3
-    @users = User.updateTableSeats
+    @users = User.updateGuestNum
   end
 
   def query4
-    @users = User.queryUsersWhoBookedTables
+    @users = User.queryUsersWhoBookedFour
   end
 
   def index

@@ -3,9 +3,6 @@ class TablesController < ApplicationController
 
   # GET /tables
   # GET /tables.json
-  def query6
-    @tables = Table.restosAndUsersInHollywood
-  end
 
   def index
     @tables = Table.all

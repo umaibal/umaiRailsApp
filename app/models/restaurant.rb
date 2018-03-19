@@ -10,7 +10,7 @@ class Restaurant < ApplicationRecord
   has_many :tables
 
     def self.highlyReviewedRestos
-      # Get restaurants that are within a certain rating range
+      # Get restaurants that have a rating over 4 stars
       Restaurant.select(:name, :address, :review)
                 .where("review > ?", 4)
                 .order("name ASC")
