@@ -6,7 +6,7 @@ class TableTest < ActiveSupport::TestCase
 
     t = Table.new(
       restaurant_id: 1,
-      user_id: 1)
+      user_id: 2)
 
     #  no seats
     t.seats = ''

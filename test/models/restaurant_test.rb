@@ -5,13 +5,13 @@ class RestaurantTest < ActiveSupport::TestCase
   test "name must be present" do
     resto = Restaurant.new(
       address: 'sa',
-      email: 'tt',
+      email: 't',
       phoneNum: '32',
-      website: 'ww',
-      review: 5,
-      cuisineType: 'in',
-      menu: 'nu',
-      table_id: 1
+      website: 'ikw',
+      review: 1,
+      cuisineType: 'dwn',
+      # menu: 'u',
+      table_id: 2
     )
 
     #  no name
@@ -23,13 +23,13 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "address must be present" do
     resto = Restaurant.new(
-      name: 'ik',
-      ]     email: 'tt',
-      phoneNum: '32',
-      website: 'ww',
-      review: 5,
-      cuisineType: 'in',
-      menu: 'nu',
+      name: 'knowless',
+      email: 'boo',
+      phoneNum: '42',
+      website: 'west',
+      review: 3,
+      cuisineType: 'allen',
+      # menu: 'barry',
       table_id: 1
     )
 
@@ -42,14 +42,14 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "email must be present" do
     resto = Restaurant.new(
-      name: 'yu',
-      address: 'sa',
-      phoneNum: '32',
-      website: 'ww',
+      name: 'sara',
+      address: 'oark',
+      phoneNum: '72',
+      website: 'htt',
       review: 5,
-      cuisineType: 'in',
-      menu: 'nu',
-      table_id: 1
+      cuisineType: 'oiu',
+      menu: 'books',
+      table_id: 2
     )
 
     #  no email
@@ -61,13 +61,13 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "phoneNum must be present" do
     resto = Restaurant.new(
-      name: 'lo',
-      address: 'sa',
-      email: 'tt',
-      website: 'ww',
+      name: 'jacob',
+      address: 'batalon',
+      email: 'jb',
+      website: 'world',
       review: 5,
-      cuisineType: 'in',
-      menu: 'nu',
+      cuisineType: 'hawaii',
+      menu: 'none',
       table_id: 1
     )
 
@@ -80,12 +80,12 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "review must be a number below 5 and whole" do
     resto = Restaurant.new(
-      name: 'cam',
-      address: 'sa',
-      email: 'tt',
-      website: 'ww',
-      cuisineType: 'in',
-      menu: 'nu',
+      name: 'caeron',
+      address: 'boyce',
+      email: 'disney',
+      website: 'listed',
+      cuisineType: 'mmix',
+      menu: 'nome',
       table_id: 1
     )
 
@@ -104,13 +104,13 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "cuisineType must be present and below 75 Characters" do
     resto = Restaurant.new(
-      name: 'lo',
-      address: 'sa',
-      email: 'tt',
-      website: 'ww',
-      review: 5,
-      menu: 'nu',
-      table_id: 1
+      name: 'tom',
+      address: 'holland',
+      email: 'ewwo',
+      website: 'spiderman',
+      review: 4,
+      menu: 'spooderman',
+      table_id: 2
     )
 
     #  no cuisineType
@@ -129,13 +129,13 @@ class RestaurantTest < ActiveSupport::TestCase
   # validates :table_id, length: {minimum: 1}
   test "table_id must be at least 1" do
     resto = Restaurant.new(
-      name: 'lo',
-      address: 'sa',
-      email: 'tt',
-      website: 'ww',
-      review: 5,
-      cuisineType: 'in',
-      menu: 'nu'    )
+      name: 'zendaya',
+      address: 'coleman',
+      email: 'diney',
+      website: 'hersite',
+      review: 4,
+      cuisineType: 'choco',
+      menu: 'fashion'    )
 
     #  invalid id
     resto.table_id = 0

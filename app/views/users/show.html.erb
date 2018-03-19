@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<!-- Display all of that user's information! -->
+<h1>User details:</h1>
+
+<p>Username: <%=h @user.username %></p>
+<p>First Name: <%=h @user.firstName %></p>
+<p>Last Name: <%=h @user.lastName %></p>
+<p>Email: <%=h @user.email %></p>
+<p>Address: <%=h @user.address %></p>
+<p>Phone Number: <%=h @user.phoneNum %></p>
+<p>Payment Method: <%=h @user.paymentMethod %></p>
+
+<p>Testing query result:<%=h @user.usersWhoBookedTables %></p>
+
+<!-- <% @products.each do |product| %>
+Product Name: <%= product.name %>
+Product Income: <%= product.income %>
+Product Cost: <%= product.cost %>
+Product Profit: <%= product.profit %>
+<% end %> -->
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

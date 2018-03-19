@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312190026) do
+ActiveRecord::Schema.define(version: 20180314021410) do
 
   create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180312190026) do
     t.string "cuisineType"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "menu"
     t.integer "table_id"
   end
 

@@ -5,25 +5,25 @@ class UserTest < ActiveSupport::TestCase
   test "username must be less than 20 char" do
     user = User.new(
         firstName: 'aa',
-        lastName: 'bb',
-        email: 'cc',
-        address: 'dd',
-        phoneNum: '12',
-        paymentMethod: 'ee')
+        lastName: 'w',
+        email: 'r',
+        address: 't',
+        phoneNum: '1',
+        paymentMethod: 'w')
 
     # greater than 20 chars
     user.username = 'alfalfatunisiamondayssm'
     assert user.invalid?
-    assert_equal ["must be less than twenty characters"],
+    assert_equal ["user name must be less than twenty characters"],
     user.errors[:username]
   end
 
   test "first name must be present" do
-    user = User.new(username: 'll'
-        lastName: 'bb',
-        email: 'cc'
-        address: 'dd'
-        phoneNum: '12',
+    user = User.new(username: 'v'
+        lastName: 'r',
+        email: 'c'
+        address: 'q'
+        phoneNum: '8',
         paymentMethod: 'ee')
 
     # no first name
@@ -34,12 +34,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "last name must be present" do
-    user = User.new(username: 'll'
-        firstName: 'bb',
-        email: 'cc',
-        address: 'dd',
-        phoneNum: '12',
-        paymentMethod: 'ee')
+    user = User.new(username: 'c'
+        firstName: 'e',
+        email: 'd',
+        address: 's',
+        phoneNum: '6',
+        paymentMethod: 'i')
 
         # no last name
         user.lastName = ''
@@ -49,12 +49,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email must be present" do
-    user = User.new(username: 'll'
-        firstName: 'bb',
-        lastName: 're',
-        address: 'dd',
-        phoneNum: '12',
-        paymentMethod: 'ee')
+    user = User.new(username: 'y'
+        firstName: 'b',
+        lastName: 'e',
+        address: 'w',
+        phoneNum: '4',
+        paymentMethod: 'h')
 
         # no email
         user.email = ''
@@ -64,12 +64,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "address must be present" do
-    user = User.new(username: 'll'
-        firstName: 'aa',
-        lastName: 'bb',
-        email: 'cc',
-        phoneNum: '12',
-        paymentMethod: 'ee')
+    user = User.new(username: 'mk'
+        firstName: 'ff',
+        lastName: 'r',
+        email: 'ukaj',
+        phoneNum: '876',
+        paymentMethod: 'wee')
 
         # no address
         user.address = ''
@@ -79,12 +79,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "phoneNum must be present and contain numbers only" do
-    user = User.new(username: 'll'
-        firstName: 'aa',
-        lastName: 'bb',
-        email: 'cc',
-        address: 'po',
-        paymentMethod: 'ee')
+    user = User.new(username: 'uma'
+        firstName: 'uy',
+        lastName: 'rew',
+        email: 'yu',
+        address: 'kh',
+        paymentMethod: 'cvb')
 
         # no phoneNum
         user.phoneNum = ''
@@ -99,12 +99,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "paymentMethod must be present" do
-    user = User.new(username: 'll'
-        firstName: 'aa',
-        lastName: 'bb',
-        email: 'cc',
-        phoneNum: '12',
-        address: 'po')
+    user = User.new(username: 'nuu'
+        firstName: 'tar ',
+        lastName: 'yg',
+        email: 'ew',
+        phoneNum: '76',
+        address: 'lkjlkjh')
 
         # no payment method
         user.paymentMethod = ''
