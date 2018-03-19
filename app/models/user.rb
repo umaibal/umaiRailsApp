@@ -20,12 +20,12 @@ class User < ApplicationRecord
         .limit(2)
   end
 
-  def self.usersWhoBookedTables
-    # method that returns all users who have booked a table
-    User.select(:firstName, :lastName)
-        .where.not(table_id: nil)
-        .order(:id)
-  end
+  # def self.usersWhoBookedTables
+  #   # method that returns all users who have booked a table
+  #   User.select(:firstName, :lastName)
+  #       .where.not(table_id: nil)
+  #       .order(:id)
+  # end
 
   # def self.updateTableSeats
   #   # update/delete some records in the existing DB
@@ -36,12 +36,12 @@ class User < ApplicationRecord
   #        .update_all(table_seats: 7)
   # end
 
-  def self.queryUsersWhoBookedTables
-    # Get all users who have booked a seat for four or more people at a restaurant
-    User.select(:firstName, :lastName)
-        .joins("INNER JOIN tables ON tables.user_id = users.id")
-        .where("users.table_id IS NOT NULL AND tables.seats >= 4")
-        .all
-  end
+  # def self.queryUsersWhoBookedTables
+  #   # Get all users who have booked a seat for four or more people at a restaurant
+  #   User.select(:firstName, :lastName)
+  #       .joins("INNER JOIN tables ON tables.user_id = users.id")
+  #       .where("users.table_id IS NOT NULL AND tables.seats >= 4")
+  #       .all
+  # end
 
 end

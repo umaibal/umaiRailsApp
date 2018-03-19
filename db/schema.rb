@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319190841) do
+ActiveRecord::Schema.define(version: 20180319191931) do
+
+  create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "date"
+    t.time "time"
+    t.integer "table_id"
+    t.integer "user_id"
+    t.integer "num_guests"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -44,7 +54,6 @@ ActiveRecord::Schema.define(version: 20180319190841) do
     t.string "paymentMethod"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "table_id"
   end
 
 end

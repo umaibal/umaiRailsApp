@@ -1,7 +1,6 @@
 class CreateRestaurants < ActiveRecord::Migration[5.1]
 
   # using the up/down methods instead of change method
-
   def up
     create_table :restaurants do |t|
       t.string :name

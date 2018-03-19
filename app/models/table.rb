@@ -9,6 +9,7 @@ class Table < ApplicationRecord
 
   def self.restosAndUsersInHollywood
 
+# Find by SQL syntax:
     # Table.find_by_sql(["SELECT users.firstName, restaurants.name tables
     #       JOIN users ON users.id = tables.user_id
     #       JOIN restaurants ON restaurants.id = tables.user_id
