@@ -11,7 +11,7 @@ class RestaurantTest < ActiveSupport::TestCase
       review: 1,
       cuisineType: 'dwn',
       # menu: 'u',
-      table_id: 2
+      # table_id: 2
     )
 
     #  no name
@@ -30,7 +30,7 @@ class RestaurantTest < ActiveSupport::TestCase
       review: 3,
       cuisineType: 'allen',
       # menu: 'barry',
-      table_id: 1
+      # table_id: 1
     )
 
     #  no address
@@ -49,7 +49,7 @@ class RestaurantTest < ActiveSupport::TestCase
       review: 5,
       cuisineType: 'oiu',
       menu: 'books',
-      table_id: 2
+      # table_id: 2
     )
 
     #  no email
@@ -68,7 +68,7 @@ class RestaurantTest < ActiveSupport::TestCase
       review: 5,
       cuisineType: 'hawaii',
       menu: 'none',
-      table_id: 1
+      # table_id: 1
     )
 
     #  no number
@@ -86,7 +86,7 @@ class RestaurantTest < ActiveSupport::TestCase
       website: 'listed',
       cuisineType: 'mmix',
       menu: 'nome',
-      table_id: 1
+      # table_id: 1
     )
 
     #  number above 5
@@ -110,7 +110,7 @@ class RestaurantTest < ActiveSupport::TestCase
       website: 'spiderman',
       review: 4,
       menu: 'spooderman',
-      table_id: 2
+      # table_id: 2
     )
 
     #  no cuisineType
@@ -127,21 +127,21 @@ class RestaurantTest < ActiveSupport::TestCase
   end
 
   # validates :table_id, length: {minimum: 1}
-  test "table_id must be at least 1" do
-    resto = Restaurant.new(
-      name: 'zendaya',
-      address: 'coleman',
-      email: 'diney',
-      website: 'hersite',
-      review: 4,
-      cuisineType: 'choco',
-      menu: 'fashion'    )
-
-    #  invalid id
-    resto.table_id = 0
-    assert resto.invalid?
-    assert_equal ["restaurants table id must be at least 1"],
-    resto.errors[:table_id]
-  end
+  # test "table_id must be at least 1" do
+  #   resto = Restaurant.new(
+  #     name: 'zendaya',
+  #     address: 'coleman',
+  #     email: 'diney',
+  #     website: 'hersite',
+  #     review: 4,
+  #     cuisineType: 'choco',
+  #     menu: 'fashion'    )
+  #
+  #   #  invalid id
+  #   resto.table_id = 0
+  #   assert resto.invalid?
+  #   assert_equal ["restaurants table id must be at least 1"],
+  #   resto.errors[:table_id]
+  # end
 
 end

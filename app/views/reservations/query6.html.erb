@@ -1,8 +1,7 @@
 <h1>Reservation Query 6</h1>
 
-
-<% @reservations.each do |table| %>
+<% @reservation.each do |reserve| %>
 <p>
-<%= "#{table.firstName}, #{table.name}" %>
+<%= "#{reserve.firstName}, #{reserve.lastName}" %>
 </p>
 <% end %>

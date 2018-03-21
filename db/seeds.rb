@@ -13,7 +13,7 @@ Restaurant.destroy_all
 
 
 # Make a few Users:
-u1 = User.create!(username: 'foodie27',
+u1 = User.new(username: 'foodie27',
   firstName: 'Umai',
   lastName: 'Balendra',
   email: 'umai.balendra@gmail.com',
@@ -23,7 +23,7 @@ u1 = User.create!(username: 'foodie27',
 
   u1.save
 
-  u2 = User.create!(username: 'selG',
+  u2 = User.new(username: 'selG',
     firstName: 'Selena',
     lastName: 'Gomez',
     email: 'sel02@hotmail.com',
@@ -32,7 +32,7 @@ u1 = User.create!(username: 'foodie27',
     paymentMethod: 'Mastercard') #with no user name
     u2.save
 
-    u3 = User.create!(username: 'bmars',
+    u3 = User.new(username: 'bmars',
       firstName: 'Bruno',
       lastName: 'Mars',
       email: 'sars@outlook.com',
@@ -43,50 +43,51 @@ u1 = User.create!(username: 'foodie27',
       u3.save
 
       # Make a few Restaurants:
-      r1 = Restaurant.create!(name: 'La Bella Managua',
+      r1 = Restaurant.new(name: 'La Bella Managua',
         address: '872 Bloor St W ',
         email: 'resto24@hotmail.com',
         phoneNum: '6147532523',
         website: 'www.labellamanagua.com',
         review: 5,
         cuisineType: 'Nicaraguanese',
-        menu: 'www.labellamanagua.com/menu',
-        table_id: 1
+        menu: 'www.labellamanagua.com/menu'
+        # table_id: 1
       )
 
       r1.save
       #
-      r2 = Restaurant.create!(name: 'Hard Rock Cafe',
+      r2 = Restaurant.new(name: 'Hard Rock Cafe',
         address: '100 Hollywood Boulevard',
         email: 'hrcafe@gmail.com',
         phoneNum: '8007643827',
         website: 'www.hardrock.com/cafes/hollywood-on-hollywood-blvd',
         review: 4,
         cuisineType: 'American',
-        menu: 'www.hardrock.com/cafe-menu',
-        table_id: 2
+        menu: 'www.hardrock.com/cafe-menu'
+        # table_id: 2
       )
 
       r2.save
 
       # Make some Tables:
-      t1 =  Table.create!(seats: 2,
-        restaurant_id: r1.id)
+      t1 =  Table.new(seats: 2,
+        restaurant_id: r1.id
+      )
 
         t1.save
 
-        t2 =  Table.create!(seats: 2,
+        t2 =  Table.new(seats: 5,
           restaurant_id: r2.id)
 
           t2.save
 
-          t3 = Table.create!(seats: 8,
+          t3 = Table.new(seats: 8,
             restaurant_id: r1.id)
 
             t3.save
 
             # Make some Reservations:
-            s1 = Reservation.create!(date:'2018-05-02',
+            s1 = Reservation.new(date:'2018-05-02',
               time:'11:00:00',
               table_id: t1.id,
               user_id: u1.id,
@@ -94,7 +95,7 @@ u1 = User.create!(username: 'foodie27',
 
               s1.save
 
-              s2 = Reservation.create!(date:'2018-05-08',
+              s2 = Reservation.new(date:'2018-05-08',
                 time:'15:35:00',
                 table_id: t2.id,
                 user_id: u2.id,
@@ -102,7 +103,7 @@ u1 = User.create!(username: 'foodie27',
 
                 s2.save
 
-                s3 = Reservation.create!(date:'2018-04-09',
+                s3 = Reservation.new(date:'2018-04-09',
                   time:'18:00:00',
                   table_id: t3.id,
                   user_id: u3.id,

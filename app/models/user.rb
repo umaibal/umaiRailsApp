@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :phoneNum, presence: true, numericality: true
   validates :paymentMethod, presence: true
 
-  has_many :tables, through: :reservations
+  has_many :tables, through: :reservation
 
 
   def self.mastercardUsersAndCount

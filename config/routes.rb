@@ -4,18 +4,22 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/new'
   get 'users/show'
-  get 'users/query1'
-  get 'users/query2'
-  get 'users/query3'
-  get 'users/query4'
 
-  get 'tables/query6'
+
+  get 'users/query1'
+
+  get 'reservations/query2'
+  get 'reservations/query3'
+  get 'reservations/query4'
 
   get 'restaurants/query5'
+
+  get 'reservations/query6'
 
 
   resources :users
   resources :restaurants
+  resources :reservations
 
   # root 'user#index'
 
