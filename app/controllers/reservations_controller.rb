@@ -9,11 +9,7 @@ class ReservationsController < ApplicationController
   end
 
   def query3
-    #
-    #
     @reservation = Reservation.updateGuestNum
-    #
-    #
   end
 
   def query4
@@ -21,11 +17,18 @@ class ReservationsController < ApplicationController
   end
 
   def query6
-    #
-    #
     @reservation = Reservation.restosAndUsersInHollywood
-    #
-    #
+  end
+
+  def query7
+    @reservation = Reservation.getAfternoonReservationDeets
+  end
+
+  def query8
+    @reservation = Reservation.new
+    @reservation.getRestoIdFromTableInfo
+
+    # @reservation = Reservation.getRestoIdFromTableInfo
   end
 
   def index

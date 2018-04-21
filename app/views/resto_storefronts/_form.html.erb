@@ -1,0 +1,22 @@
+<%= form_with(model: resto_storefront, local: true) do |form| %>
+  <% if resto_storefront.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resto_storefront.errors.count, "error") %> prohibited this resto_storefront from being saved:</h2>
+
+      <ul>
+      <% resto_storefront.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.text_field :index, id: :resto_storefront_index %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

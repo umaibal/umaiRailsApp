@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>UmaiRailsApp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>UmaiRailsApp</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <header class="main">
+    <h1><%= @page_title %></h1>
+  </header>
+  <section class="content">
+    <nav class="side_nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/restaurants">Restaurants</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+        <li><a href="/tables">Tables</a></li>
+      </ul>
+    </nav>
+    <main class='<%= controller.controller_name %>'>
+      <%= yield %>
+    </main>
+  </section>
+</body>
 </html>

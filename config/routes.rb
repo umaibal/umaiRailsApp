@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :resto_storefronts
+  resources :controllers
   get 'users/edit'
   get 'users/index'
   get 'users/new'
   get 'users/show'
-
 
   get 'users/query1'
 
@@ -15,13 +16,19 @@ Rails.application.routes.draw do
   get 'restaurants/query5'
 
   get 'reservations/query6'
+  get 'reservations/query7'
+  get 'reservations/query8'
 
+  get 'tables/show'
+
+  # get 'resto_storefronts/show'
 
   resources :users
   resources :restaurants
   resources :reservations
 
-  # root 'user#index'
+  resources :tables
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

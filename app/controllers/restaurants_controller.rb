@@ -4,7 +4,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def query5
-    @restaurants = Restaurant.highlyReviewedRestos
+    # @restaurants = Restaurant.highlyReviewedRestos
+    @restaurant = Restaurant.new
+    @restaurant.highlyReviewedRestos
   end
 
   def index

@@ -1,0 +1,2 @@
+class RestoStorefront < ApplicationRecord
+end
