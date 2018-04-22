@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class TableTest < ActiveSupport::TestCase
-
   test "number of seats must be specified, must be greater than or equal to 1 and a whole number" do
 
     t = Table.new(
@@ -41,20 +40,4 @@ class TableTest < ActiveSupport::TestCase
     t.errors[:restaurant_id]
 
   end
-
-  # test "user_id must be present" do
-  #
-  #   t = Table.new(
-  #     t.seats: 3,
-  #     restaurant_id: 1)
-  #
-  #   #  no user_id
-  #   t.user_id = ''
-  #   assert t.invalid?
-  #   assert_equal ["user id is required"],
-  #   t.errors[:user_id]
-  #
-  # end
-
-
 end
