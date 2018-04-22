@@ -9,10 +9,16 @@
     list-style: none;
     padding: 0;
     margin: 0;
+
+    font-family: 'San Francisco';
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
     li {
       padding: 1em;
       margin: 0;
-      border-bottom: solid thin #ddd;
+      border-bottom: solid thin #43467F;
+
       // This makes sure our <li> has enough height
       // to hold the entire image, since it's floated
       // &::after {
@@ -28,6 +34,8 @@
       //   box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
       // }
       .review {
+        font-family: 'San Francisco';
+        font-size: 14px;
         font-size: 1.414em;
       }
     }

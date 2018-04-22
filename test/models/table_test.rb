@@ -31,7 +31,7 @@ class TableTest < ActiveSupport::TestCase
   test "restaurant_id must be present" do
 
     t = Table.new(
-      t.seats: 3,
+      t.seats = 3,
       user_id: 1)
 
     #  no restaurant_id
