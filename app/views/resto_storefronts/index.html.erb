@@ -9,6 +9,7 @@
     <!-- add images as well -->
     <h2><%= restaurant.name %></h2>
     <h4><%= link_to restaurant.website, target: :_blank %></h4>
+    <p><%= number_to_phone(restaurant.phoneNum)%> </p>
     <p>
       <%= sanitize(restaurant.cuisineType) %>
     </p>
