@@ -6,9 +6,21 @@ class Reservation < ApplicationRecord
   validates :user_id, presence: true, numericality: {only_integer: true}
   validates :num_guests, presence: true, numericality: {only_integer: true}
 
+  has_many :cart_items
+
+  before_destroy :ensure_not_referenced_by_any_cart_item
+
   belongs_to :user
   belongs_to :table
 
+  # ensure that no cart items reference this reservation
+  def ensure_not_referenced_by_any_cart_item
+    unless cart_items.empty?
+      errors.add(:base, 'Cart Item present')
+      throw :abort
+    end
+  end
+  
   def self.restosAndUsersInHollywood
     # select users and restaurants where the address contains the word hollywood
     Reservation.select("users.firstName, users.lastName")
@@ -55,19 +67,19 @@ class Reservation < ApplicationRecord
   def self.getAfternoonReservationDeets
     # get info about users on reservations made between 12:00 and 16:00
     Reservation.select("users.username, users.phoneNum")
-                .joins(:user)
-                .where('time BETWEEN ? AND ?', '12:00:00', '16:00:00')
-                .order("users.username")
-                .limit(1)
+    .joins(:user)
+    .where('time BETWEEN ? AND ?', '12:00:00', '16:00:00')
+    .order("users.username")
+    .limit(1)
   end
 
 
   def getRestoIdFromTableInfo
     # get restaurant id based on selecting a table
     Reservation.select("tables.id, tables.restaurant_id")
-                .joins(:table)
-                .where('tables.seats > ?', 3)
-                .order("tables.id").last
+    .joins(:table)
+    .where('tables.seats > ?', 3)
+    .order("tables.id").last
   end
 
 
