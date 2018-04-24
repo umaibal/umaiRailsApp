@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :carts
   resources :resto_storefronts
   resources :controllers
   get 'users/edit'

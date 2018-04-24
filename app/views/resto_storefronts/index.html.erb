@@ -10,7 +10,7 @@
     <li class="list-group-item"><h4><%= link_to restaurant.website, target: :_blank %></h4></li>
     <li class="list-group-item"><p><%= number_to_phone(restaurant.phoneNum)%></p></li>
     <li class="list-group-item"><p><%= sanitize(restaurant.cuisineType) %></p></li>
-    <li class="list-group-item"><p><%= restaurant.review %></p></li>
+    <li class="list-group-item"><p>Review:<%= restaurant.review %></p></li>
   </li>
 </ul>
 <% end %>
