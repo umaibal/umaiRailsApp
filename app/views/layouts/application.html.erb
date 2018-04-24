@@ -4,35 +4,73 @@
   <title>UmaiRailsApp</title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag 'https://sdks.shopifycdn.com/polaris/1.14.1/polaris.min.css' %>
+  <!-- <%= stylesheet_link_tag 'https://sdks.shopifycdn.com/polaris/1.14.1/polaris.min.css' %> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
+
+  <div class="jumbotron">
+    <%= image_tag 'city.png' %>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/restaurants">Restaurants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reservations">Reservations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tables">Tables</a>
+      </li>
+    </ul>
+
+  </nav>
+
   <header class="main">
-    <%= image_tag 'panda.jpg', alt: 'Umais Company' %>
     <h1><%= @page_title %></h1>
   </header>
-  <section class="content">
 
-<!-- <dl class="Polaris-DescriptionList"><dt class="Polaris-DescriptionList__Term">Logistics</dt>
-  <dd class="Polaris-DescriptionList__Description">The management of products or other resources as they travel between a point of origin and a destination.</dd><dt class="Polaris-DescriptionList__Term">Sole proprietorship</dt>
-  <dd class="Polaris-DescriptionList__Description">A business structure where a single individual both owns and runs the company.</dd><dt class="Polaris-DescriptionList__Term">Discount code</dt>
-  <dd class="Polaris-DescriptionList__Description">A series of numbers and/or letters that an online shopper may enter at checkout to get a discount or special offer.</dd>
-</dl> -->
-    <nav class="side_nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/restaurants">Restaurants</a></li>
-        <li><a href="/reservations">Reservations</a></li>
-        <li><a href="/tables">Tables</a></li>
-      </ul>
-    </nav>
-    <main class='<%= controller.controller_name %>'>
-      <%= yield %>
-    </main>
-  </section>
+  <section class="content">
+    <!-- <div class="w3-sidebar w3-bar-block w3-collapse" style="width:200px;right:0" id="mySidebar">
+      <button class="Polaris-Button" onclick="_close()">X</button>
+      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="/restaurants" class="w3-bar-item w3-button">Restaurants</a>
+      <a href="/reservations" class="w3-bar-item w3-button">Reservations</a>
+      <a href="/tables" class="w3-bar-item w3-button">Tables</a>
+    </div> -->
+
+    <!-- <div class="w3-main" style="margin-right:200px">
+      <div class="w3-teal">
+        <button class="Polaris-Button" onclick="_open()">&#9776;</button>
+      </div>
+    </div> -->
+
+
+    <!-- <nav class="side_nav">
+    <ul> -->
+    <!-- <li><a href="/">Home</a></li>
+    <li><a href="/restaurants">Restaurants</a></li>
+    <li><a href="/reservations">Reservations</a></li>
+    <li><a href="/tables">Tables</a></li> -->
+    <!-- </ul>
+  </nav> -->
+
+  <main class='<%= controller.controller_name %>'>
+    <%= yield %>
+  </main>
+</section>
 </body>
 </html>

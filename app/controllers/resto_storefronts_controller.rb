@@ -11,7 +11,7 @@ class RestoStorefrontsController < ApplicationController
   def sortRestaurantsByReview
     # sort the restaurants by review in ascending order
     # display the name, rating, cuisineType, and website
-    @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum)
+    @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum, :updated_at)
                                         .order(:review)
   end
 

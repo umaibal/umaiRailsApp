@@ -2,19 +2,22 @@
 <% if notice %>
 <aside id="notice"><%= notice %></aside>
 <% end %>
-<h1>Restaurant Table Catalog</h1>
-<ul class="catalog">
-  <% @restaurants.each do |restaurant| %>
+<h1 align="center">Restaurant Table Catalog</h1>
+<% @restaurants.each do |restaurant| %>
+<ul class="list-group">
   <li>
-    <!-- add images as well -->
-    <h2><%= restaurant.name %></h2>
-    <h4><%= link_to restaurant.website, target: :_blank %></h4>
-    <p><%= number_to_phone(restaurant.phoneNum)%> </p>
-    <p>
-      <%= sanitize(restaurant.cuisineType) %>
-    </p>
-    <div class="review"> <%= restaurant.review %>
-    </div>
+    <li class="list-group-item"><h2><%= restaurant.name %></h2></li>
+    <li class="list-group-item"><h4><%= link_to restaurant.website, target: :_blank %></h4></li>
+    <li class="list-group-item"><p><%= number_to_phone(restaurant.phoneNum)%></p></li>
+    <li class="list-group-item"><p><%= sanitize(restaurant.cuisineType) %></p></li>
+    <li class="list-group-item"><p><%= restaurant.review %></p></li>
   </li>
-  <% end %>
+</ul>
+<% end %>
+
+
+<ul class="list-group">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
 </ul>

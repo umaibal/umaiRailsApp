@@ -15,12 +15,13 @@
 */
 
 body {
-  font-family: 'San Francisco';
+  // font-family: 'San Francisco';
 }
+
 header.main {
   text-align: center; // center on mobile
   @media (min-width: 30em) {
-    text-align: left; // left align on desktop
+    text-align: center; // left align on desktop
   }
   background: #43467F;
   margin: 0;
@@ -32,67 +33,64 @@ header.main {
   }
 }
 
+
 .content {
-  margin: 0;
-  padding: 0;
 
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 400;
-
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column; // mobile is horizontally laid out
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  @media (min-width: 30em) {
-    flex-direction: row; // desktop is vertically laid out
-    -webkit-box-orient: horizontal;
-  }
-  nav {
-    padding-bottom: 1em;
-    background: #B3B5CB;
-    text-align: center; // mobile has centered nav
-    @media (min-width: 30em) {
-      text-align: left; // desktop nav is left-aligned
-      padding: 1em;     // and needs more padding
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      @media (min-width: 30em) {
-        padding-right: 1em; // give desktop some extra space
-      }
-      li {
-        margin: 0;
-        padding: 0.5em;
-        text-transform: uppercase;
-        letter-spacing: 0.354em;
-        font-family: 'San Francisco';
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 500;
-        a{
-          font-family: 'San Francisco';
-          font-size: 16px;
-          line-height: 24px;
-          font-weight: 500;
-          color: #43467F;
-          text-decoration: none;
-        }
-        a:hover {
-          background: none;
-          color: white;
-        }
-      }
-    }
-  }
-  main {
-    padding: 0.5em;
-    font-family: 'San Francisco';
-    font-size: 28px;
-    line-height: 32px;
-    font-weight: 500;
-  }
+  // margin: 0;
+  // padding: 0;
+  //
+  // font-size: 20px;
+  // line-height: 24px;
+  // font-weight: 400;
 }
+
+  // nav {
+  //   padding-bottom: 1em;
+  //   background: #B3B5CB;
+  //   text-align: center; // mobile has centered nav
+  //   @media (min-width: 30em) {
+  //     text-align: right; // desktop nav is right-aligned
+  //     padding: 1em;     // and needs more padding
+  //   }
+  //   ul {
+  //     list-style: none;
+  //     margin: 0;
+  //     padding: 0;
+  //     @media (min-width: 30em) {
+  //       padding-right: 1em; // give desktop some extra space
+  //     }
+  //     li {
+  //       // float: right;
+  //
+  //       margin: 0;
+  //       padding: 0.5em;
+  //       text-transform: uppercase;
+  //       letter-spacing: 0.354em;
+  //       font-family: 'San Francisco';
+  //       font-size: 16px;
+  //       line-height: 24px;
+  //       font-weight: 500;
+  //       a {
+  //         font-family: 'San Francisco';
+  //         font-size: 16px;
+  //         line-height: 24px;
+  //         font-weight: 500;
+  //         color: #43467F;
+  //         text-decoration: none;
+  //       }
+  //       a:hover {
+  //         background: none;
+  //         color: white;
+  //       }
+  //     }
+  //   }
+  // }
+//
+//   main {
+//     padding: 0.5em;
+//     font-family: 'San Francisco';
+//     font-size: 28px;
+//     line-height: 32px;
+//     font-weight: 500;
+//   }
+// }
