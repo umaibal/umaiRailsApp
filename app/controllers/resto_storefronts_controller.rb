@@ -11,6 +11,12 @@ class RestoStorefrontsController < ApplicationController
   def sortRestaurantsByReview
     # sort the restaurants by review in ascending order
     # display the name, rating, cuisineType, and website
+
+    # @reservations = Reservation
+                                # .joins('INNER JOIN tables ON tables.id = reservations.table_id')
+                                # .joins('INNER JOIN tables.restaurants ON tables.restaurant_id = tables.restaurants.id')
+                                # .order(:review)
+
     @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum, :updated_at)
                                         .order(:review)
   end
