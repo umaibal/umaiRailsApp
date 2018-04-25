@@ -12,13 +12,21 @@ class RestoStorefrontsController < ApplicationController
     # sort the restaurants by review in ascending order
     # display the name, rating, cuisineType, and website
 
-    # @reservations = Reservation
-                                # .joins('INNER JOIN tables ON tables.id = reservations.table_id')
-                                # .joins('INNER JOIN tables.restaurants ON tables.restaurant_id = tables.restaurants.id')
-                                # .order(:review)
+    # @restaurants = Restaurant.joins(:tables).select('name, review, cuisineType, website, phoneNum, restaurants.updated_at, tables.id')
+    #                                     .order(:review)
 
-    @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum, :updated_at)
-                                        .order(:review)
+    # @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum, :updated_at)
+    # .order(:review)
+    # @tables = Table.joins('INNER JOIN restaurants ON restaurants.id = tables.restaurant_id')
+    # .joins('INNER JOIN reservations ON reservations.table_id = tables.id')
+    # .select('restaurants.id as rID, restaurants.name as rName, restaurants.review as rReview, restaurants.cuisineType as cuisineType, restaurants.website as site, restaurants.phoneNum as phone, restaurants.updated_at as restUpdate, tables.id')
+    # .order('rReview')
+
+    @reservations = Reservation.joins('INNER JOIN tables ON reservations.table_id = tables.id')
+    .joins('INNER JOIN restaurants ON restaurants.id = tables.restaurant_id')
+    .select('restaurants.id as rID, restaurants.name as rName, restaurants.review as rReview, restaurants.cuisineType as cuisineType, restaurants.website as site, restaurants.phoneNum as phone, restaurants.updated_at as restUpdate, tables.id')
+    .order('rReview')
+
   end
 
   # GET /resto_storefronts/1
@@ -76,13 +84,13 @@ class RestoStorefrontsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resto_storefront
-      @resto_storefront = RestoStorefront.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_resto_storefront
+    @resto_storefront = RestoStorefront.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def resto_storefront_params
-      params.require(:resto_storefront).permit(:index)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def resto_storefront_params
+    params.require(:resto_storefront).permit(:index)
+  end
 end
