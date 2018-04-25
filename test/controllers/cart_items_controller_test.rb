@@ -20,7 +20,11 @@ class CartItemsControllerTest < ActionDispatch::IntegrationTest
       post cart_items_url, params: { cart_item: { cart_id: @cart_item.cart_id, reservation_id: @cart_item.reservation_id } }
     end
 
-    assert_redirected_to cart_item_url(CartItem.last)
+    follow_redirect!
+
+    assert_select 'h2', 'Your Shopping Cart'
+
+    # assert_redirected_to cart_item_url(CartItem.last)
   end
 
   test "should show cart_item" do

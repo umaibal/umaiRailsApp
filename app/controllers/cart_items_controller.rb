@@ -1,4 +1,6 @@
 class CartItemsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:create]
   before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
   # GET /cart_items
@@ -24,11 +26,12 @@ class CartItemsController < ApplicationController
   # POST /cart_items
   # POST /cart_items.json
   def create
-    @cart_item = CartItem.new(cart_item_params)
+    reservation = Reservation.find(params[:reservation_id])
+    @cart_item = @cart.cart_items.build(reservation: reservation)
 
     respond_to do |format|
       if @cart_item.save
-        format.html { redirect_to @cart_item, notice: 'Cart item was successfully created.' }
+        format.html { redirect_to @cart_item.cart }
         format.json { render :show, status: :created, location: @cart_item }
       else
         format.html { render :new }
@@ -61,14 +64,13 @@ class CartItemsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cart_item
-      @cart_item = CartItem.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cart_item
+    @cart_item = CartItem.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def cart_item_params
-      params.require(:cart_item).permit(:reservation_id, :cart_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def cart_item_params
+    params.require(:cart_item).permit(:reservation_id, :cart_id)
+  end
 end

@@ -2,27 +2,30 @@
 <% if notice %>
 <aside id="notice"><%= notice %></aside>
 <% end %>
+
 <h1 align="center">Restaurant Table Catalog</h1>
+
+<% cache @reservations do %>
 <% @reservations.each do |reservations| %>
+<% cache reservations do %>
 <ul class="list-group">
   <li>
-
     <div class="card bg-secondary text-white">
-       <li class="card-header"></li>
-     </div>
-
+      <li class="card-header"></li>
+    </div>
     <li class="card-header"></li>
     <li class="card-body"><h2><%= reservations.rName %></h2></li>
     <li class="card-body"><p><%= link_to reservations.site, target: :_blank %></p></li>
     <li class="card-body"><p><%= number_to_phone(reservations.phone)%></p></li>
     <li class="card-body"><p><%= sanitize(reservations.cuisineType) %></p></li>
     <li class="card-body"><p>Review: <%= reservations.rReview %></p></li>
-
     <!-- <div class="card bg-info text-white"> -->
-    <li><button type="button" ><p>Reserve Now!</button></li>
-  <!-- </div> -->
-
+    <!-- <li><button type="button" ><p>Reserve Now!</button></li> -->
+    <%= button_to 'BOOK', cart_items_path(reservation_id: reservations)%>
+    <!-- </div> -->
   </div>
-  </li>
+</li>
 </ul>
+<% end %>
+<% end %>
 <% end %>
