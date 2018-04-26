@@ -3,9 +3,7 @@
 one:
   seats: 1
   restaurant_id: 1
-  user_id: 1
 
 two:
   seats: 1
   restaurant_id: 1
-  user_id: 1
