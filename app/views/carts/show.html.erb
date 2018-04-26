@@ -6,5 +6,10 @@
   <strong>Success!</strong> Cart item was successfully created.
 </div>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<ul>
+  <% @cart.cart_items.each do |item| %>
+  <li><%= item.quantity %> - <% item.reservation.date %></li>
+  <% end %>
+
+  <%= link_to 'Edit', edit_cart_path(@cart) %> |
+  <%= link_to 'Back', carts_path %>
