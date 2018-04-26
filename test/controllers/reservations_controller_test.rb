@@ -40,9 +40,9 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   # make sure that the reservation in the cart is safe
   test "can't delete reservation in cart" do
-    # according to seeded data, there are 6 reservations exisiting:
+    # there are 2 reservations in the fixture data, so use :two
     assert_difference('Reservation.count', 0) do
-      delete reservation_url(reservations(:six))
+      delete reservation_url(reservations(:two))
     end
     assert_redirected_to reservations_url
   end

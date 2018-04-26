@@ -17,7 +17,7 @@ class CartItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cart_item" do
     assert_difference('CartItem.count') do
-      post cart_items_url, params: { cart_item: { cart_id: @cart_item.cart_id, reservation_id: @cart_item.reservation_id } }
+      post cart_items_url, params: { cart_item: { cart_id: @cart_item.cart_id, reservation: @cart_item.reservation } }
     end
 
     follow_redirect!
