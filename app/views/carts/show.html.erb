@@ -10,6 +10,9 @@
   <% @cart.cart_items.each do |item| %>
   <li><%= item.quantity %> - <% item.reservation.date %></li>
   <% end %>
+</ul>
 
-  <%= link_to 'Edit', edit_cart_path(@cart) %> |
-  <%= link_to 'Back', carts_path %>
+<% button_to 'Empty cart', @cart, method: :delete,
+data: { confirm: 'Are you sure you want to empty ypur cart?' } %>
+  <!-- <%= link_to 'Edit', edit_cart_path(@cart) %> |
+  <%= link_to 'Back', carts_path %> -->

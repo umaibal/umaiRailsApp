@@ -32,7 +32,8 @@ class CartItemsController < ApplicationController
     respond_to do |format|
       if @cart_item.save
         format.html { redirect_to @cart_item.cart }
-        format.json { render :show, status: :created, location: @cart_item }
+        format.json { render :show,
+           status: :created, location: @cart_item }
       else
         format.html { render :new }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }
@@ -71,6 +72,7 @@ class CartItemsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def cart_item_params
-    params.require(:cart_item).permit(:reservation_id, :cart_id)
+    # removing cart id makes sure one cannot access others' carts
+    params.require(:cart_item).permit(:reservation_id)
   end
 end
