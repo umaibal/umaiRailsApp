@@ -1,5 +1,7 @@
 class RestoStorefrontsController < ApplicationController
-  before_action :set_resto_storefront, only: [:show, :edit, :update, :destroy]
+  include CurrentCart
+  before_action :set_cart
+  # before_action :set_resto_storefront, only: [:show, :edit, :update, :destroy]
 
   # GET /resto_storefronts
   # GET /resto_storefronts.json
@@ -17,7 +19,7 @@ class RestoStorefrontsController < ApplicationController
 
     # @restaurants = Restaurant.select(:name, :review, :cuisineType, :website, :phoneNum, :updated_at)
     # .order(:review)
-  
+
     @reservations = Reservation.joins('INNER JOIN tables ON reservations.table_id = tables.id')
     .joins('INNER JOIN restaurants ON restaurants.id = tables.restaurant_id')
     .select('restaurants.id as rID, restaurants.name as rName, restaurants.review as rReview, restaurants.cuisineType as cuisineType, restaurants.website as site, restaurants.phoneNum as phone, restaurants.updated_at as restUpdate, tables.id, reservations.updated_at')

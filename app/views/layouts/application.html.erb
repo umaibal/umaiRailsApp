@@ -18,8 +18,18 @@
     <%= image_tag 'city.png' %>
   </div>
 
-  <nav class="navbar navbar-expand-sm bg-light">
+  <nav class="navbar bg-light">
+
+    <div>
     <ul class="navbar-nav">
+
+      <!-- display cart object in sidebar -->
+      <% if @cart %>
+      <div id="cart" class="carts">
+        <%= render @cart %>
+      </div>
+      <% end %>
+
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
@@ -29,10 +39,8 @@
       <li class="nav-item">
         <a class="nav-link" href="/reservations">Reservations</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/tables">Tables</a>
-      </li> -->
     </ul>
+  </div>
   </nav>
 
   <header class="main">
