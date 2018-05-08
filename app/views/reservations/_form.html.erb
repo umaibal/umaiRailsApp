@@ -12,9 +12,18 @@
   <% end %>
 
 
-<!-- CREATE FORM HERE for G1 -->
+<!-- New reservation form: -->
+<%= form_with(model: @order, local: true) do |form| %> <p>
+<%= form.label :date, "Date:" %>
+<%= form.date_field("reservationDate") %> </p>
 
+<p><%= form.label :time, "Time:" %>
+<%= form.time_field("reservationTime") %> </p>
 
+<p><%= form.label :num_guests, "Number of Guests:" %>
+<%= form.select :num_guests, (1..10) %> </p>
+
+<% end %>
 
   <div class="actions">
     <%= form.submit %>

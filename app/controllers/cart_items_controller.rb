@@ -33,6 +33,7 @@ class CartItemsController < ApplicationController
     respond_to do |format|
       if @cart_item.save
         format.html { redirect_to resto_storefront_url }
+        format.js
         format.json { render :show,
            status: :created, location: @cart_item }
       else
