@@ -17,6 +17,7 @@ class CartItemsController < ApplicationController
   # GET /cart_items/new
   def new
     @cart_item = CartItem.new
+    redirect_to _form.html.erb
   end
 
   # GET /cart_items/1/edit
@@ -31,7 +32,7 @@ class CartItemsController < ApplicationController
 
     respond_to do |format|
       if @cart_item.save
-        format.html { redirect_to resto_storefront_index_url }
+        format.html { redirect_to resto_storefront_url }
         format.json { render :show,
            status: :created, location: @cart_item }
       else

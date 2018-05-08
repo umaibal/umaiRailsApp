@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
+  # root 'resto_storefront#index', as: 'resto_storefront_index'
+
   resources :cart_items
+
+  get 'cart_items/show'
+
   resources :carts
+
   resources :resto_storefronts
+  get 'resto_storefronts/show'
+
   resources :controllers
   get 'users/edit'
   get 'users/index'
@@ -21,9 +29,9 @@ Rails.application.routes.draw do
   get 'reservations/query7'
   get 'reservations/query8'
 
-  get 'tables/show'
+  get 'reservations/new'
 
-  # get 'resto_storefronts/show'
+  get 'tables/show'
 
   resources :users
   resources :restaurants
