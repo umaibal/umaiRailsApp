@@ -10,7 +10,16 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+
+  test "requires item in cart" do
+    get new_order_url
+    assert_redirected_to resto_storefronts_url
+    assert_equal flash[:notice], 'Cart is EMPTY! :o'
+  end
+
+
   test "should get new" do
+    # post cart_items_url, params: {reservation_id: reservations(:ruby).id }
     get new_order_url
     assert_response :success
   end

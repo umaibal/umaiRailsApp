@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
-  discountCode: MyString
+  username: umaibal
+  discountCode: HuIo
 
 two:
   username: MyString

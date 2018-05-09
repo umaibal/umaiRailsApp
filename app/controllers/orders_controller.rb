@@ -1,5 +1,16 @@
 class OrdersController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:new, :create] #
+  before_action :ensure_cart_isnt_empty, only: :new # make sure cart has items
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+
+  def ensure_cart_isnt_empty
+    # if no items in cart, redirect to main store site
+    # and provide flash notice
+    if @cart.cart_items.empty?
+      redirect_to resto_storefronts_url , notice: 'Cart is EMPTY! :o'
+    end
+  end
 
   # GET /orders
   # GET /orders.json

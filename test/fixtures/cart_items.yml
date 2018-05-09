@@ -6,4 +6,4 @@ one:
 
 two:
   reservation: two
-  cart: two
+  cart: one

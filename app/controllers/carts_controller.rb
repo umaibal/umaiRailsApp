@@ -4,7 +4,7 @@ class CartsController < ApplicationController
 
   def invalid_cart
     logger.error "Attempting to access invalid cart #{params[:id]}"
-    redirect_to store_index_url, notice: 'Invalid cart :('
+    redirect_to resto_storefronts_url, notice: 'Invalid cart :('
   end
 
   # GET /carts
@@ -63,7 +63,7 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_index_url,
+      format.html { redirect_to resto_storefronts_url,
          notice: 'Your cart is currently empty!' }
       format.json { head :no_content }
     end
