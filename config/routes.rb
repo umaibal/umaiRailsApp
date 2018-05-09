@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   # root 'resto_storefront#index', as: 'resto_storefront_index'
 
   resources :cart_items

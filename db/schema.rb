@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425235846) do
+ActiveRecord::Schema.define(version: 20180509171950) do
 
   create_table "cart_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "reservation_id"
@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 20180425235846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
+    t.bigint "order_id"
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["order_id"], name: "index_cart_items_on_order_id"
     t.index ["reservation_id"], name: "index_cart_items_on_reservation_id"
   end
 
@@ -30,6 +32,13 @@ ActiveRecord::Schema.define(version: 20180425235846) do
   create_table "controllers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "restoStorefront"
     t.string "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "username"
+    t.string "discountCode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,5 +93,6 @@ ActiveRecord::Schema.define(version: 20180425235846) do
   end
 
   add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "orders"
   add_foreign_key "cart_items", "reservations"
 end
