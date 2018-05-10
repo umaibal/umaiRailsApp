@@ -21,7 +21,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     # post cart_items_url, params: {reservation_id: reservations(:ruby).id }
     get new_order_url
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should create order" do

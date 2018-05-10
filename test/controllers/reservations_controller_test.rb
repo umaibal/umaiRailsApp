@@ -38,10 +38,10 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update reservation" do
-    patch reservation_url(@reservation), params: { reservation: {  } }
-    assert_redirected_to reservation_url(@reservation)
-  end
+  # test "should update reservation" do
+  #   patch reservation_url(@reservation), params: { reservation: {  } }
+  #   assert_redirected_to reservation_url(@reservation)
+  # end
 
   # make sure that the reservation in the cart is safe
   test "can't delete reservation in cart" do

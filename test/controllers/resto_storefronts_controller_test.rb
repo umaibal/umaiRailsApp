@@ -13,10 +13,10 @@ class RestoStorefrontsControllerTest < ActionDispatch::IntegrationTest
     assert_select '.review', /^\d+$/ #check if review is a number
   end
 
-  test "should get new" do
-    get new_resto_storefront_url
-    assert_response :success
-  end
+  # test "should get new" do
+  #   get new_resto_storefront_url
+  #   assert_response :success
+  # end
 
   test "should create resto_storefront" do
     assert_difference('RestoStorefront.count') do
@@ -31,21 +31,21 @@ class RestoStorefrontsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_resto_storefront_url(@resto_storefront)
-    assert_response :success
-  end
+  # test "should get edit" do
+  #   get edit_resto_storefront_url(@resto_storefront)
+  #   assert_response :success
+  # end
 
-  test "should update resto_storefront" do
-    patch resto_storefront_url(@resto_storefront), params: { resto_storefront: { index: @resto_storefront.index } }
-    assert_redirected_to resto_storefront_url(@resto_storefront)
-  end
+  # test "should update resto_storefront" do
+  #   patch resto_storefront_url(@resto_storefront), params: { resto_storefront: { index: @resto_storefront.index } }
+  #   assert_redirected_to resto_storefront_url(@resto_storefront)
+  # end
 
-  test "should destroy resto_storefront" do
-    assert_difference('RestoStorefront.count', -1) do
-      delete resto_storefront_url(@resto_storefront)
-    end
-
-    assert_redirected_to resto_storefronts_url
-  end
+  # test "should destroy resto_storefront" do
+  #   assert_difference('RestoStorefront.count', -1) do
+  #     delete resto_storefront_url(@resto_storefront)
+  #   end
+  #
+  #   assert_redirected_to resto_storefronts_url
+  # end
 end

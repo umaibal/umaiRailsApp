@@ -39,7 +39,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy cart" do
-    port cart_items_url, params: { reservation_id: reservations(:ruby).id }
+    post cart_items_url, params: { }
     @cart = Cart.find(session[:cart_id])
 
     assert_difference('Cart.count', -1) do

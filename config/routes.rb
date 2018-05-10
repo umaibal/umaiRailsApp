@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
+  resources :resto_storefronts
+  # root to: 'resto_storefronts/index'
+  get 'resto_storefronts/show'
 
   resources :orders
-  # root 'resto_storefront#index', as: 'resto_storefront_index'
-
   resources :cart_items
 
   get 'cart_items/show'
 
   resources :carts
-
-  resources :resto_storefronts
-  get 'resto_storefronts/show'
 
   resources :controllers
   get 'users/edit'
@@ -36,6 +34,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :restaurants
+
   resources :reservations
 
   resources :tables
