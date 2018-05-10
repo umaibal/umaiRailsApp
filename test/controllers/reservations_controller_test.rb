@@ -16,7 +16,6 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create reservation" do
-    assert_select '.review', /^\d+$/ #check if review is a number
     assert_difference('Reservation.count') do
       post reservations_url, params: { reservation: { date: @reservation.date,
         time: @reservation.time,
