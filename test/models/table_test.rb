@@ -4,7 +4,6 @@ class TableTest < ActiveSupport::TestCase
   test "number of seats must be specified, must be greater than or equal to 1 and a whole number" do
 
     t = Table.new(
-      restaurant_id: 1,
       restaurant_id: 2)
 
     #  no seats
@@ -36,8 +35,5 @@ class TableTest < ActiveSupport::TestCase
     #  no restaurant_id
     t.restaurant_id = ''
     assert t.invalid?
-    assert_equal ["restaurant id is required"],
-    t.errors[:restaurant_id]
-
   end
 end

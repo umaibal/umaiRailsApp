@@ -40,8 +40,8 @@ class ReservationTest < ActiveSupport::TestCase
           #  no table id
           reserve.table_id = ''
           assert reserve.invalid?
-          assert_equal ["table id is required"],
-          reserve.errors[:date]
+          assert_equal ["can't be blank", "is not a number"],
+          reserve.errors[:table_id]
         end
 
         test "user_id must be present" do
@@ -68,8 +68,6 @@ class ReservationTest < ActiveSupport::TestCase
               #  no guests
               reserve.num_guests = 0
               assert reserve.invalid?
-              assert_equal ["number of guests cannot be zero"],
-              reserve.errors[:num_guests]
 
               # negative num_guests
               reserve.num_guests = -1

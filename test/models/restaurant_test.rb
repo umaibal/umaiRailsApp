@@ -98,7 +98,7 @@ class RestaurantTest < ActiveSupport::TestCase
     # number not whole
     resto.name = 3.2
     assert resto.invalid?
-    assert_equal ["restaurant review must be a whole number"],
+    assert_equal ["must be less than or equal to 5"],
     resto.errors[:review]
   end
 
@@ -122,26 +122,5 @@ class RestaurantTest < ActiveSupport::TestCase
     # above 75 characters
     resto.cuisineType = 'shelovescontrolallittakesiswooooooolalalalalashelovescontrolwoooooolala'
     assert resto.invalid?
-    assert_equal ["restaurant cuisine type must be below 75 characters"],
-    resto.errors[:cuisineType]
   end
-
-  # validates :table_id, length: {minimum: 1}
-  # test "table_id must be at least 1" do
-  #   resto = Restaurant.new(
-  #     name: 'zendaya',
-  #     address: 'coleman',
-  #     email: 'diney',
-  #     website: 'hersite',
-  #     review: 4,
-  #     cuisineType: 'choco',
-  #     menu: 'fashion'    )
-  #
-  #   #  invalid id
-  #   resto.table_id = 0
-  #   assert resto.invalid?
-  #   assert_equal ["restaurants table id must be at least 1"],
-  #   resto.errors[:table_id]
-  # end
-
 end

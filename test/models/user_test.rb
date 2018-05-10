@@ -99,7 +99,7 @@ class UserTest < ActiveSupport::TestCase
 
                 user.phoneNum = 'areuonmimi'
                 assert user.invalid?
-                assert_equal ["phoneNum must consist of numbers"],
+                assert_equal ["is not a number"],
                 user.errors[:phoneNum]
               end
 
