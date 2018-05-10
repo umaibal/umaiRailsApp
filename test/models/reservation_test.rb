@@ -12,7 +12,7 @@ class ReservationTest < ActiveSupport::TestCase
       #  no date
       reserve.date = ''
       assert reserve.invalid?
-      assert_equal ["reservation date is required"],
+      assert_equal ["can't be blank"],
       reserve.errors[:date]
     end
 
@@ -26,7 +26,7 @@ class ReservationTest < ActiveSupport::TestCase
         #  no time
         reserve.time = ''
         assert reserve.invalid?
-        assert_equal ["reservation time is required"],
+        assert_equal ["can't be blank"],
         reserve.errors[:time]
       end
 
@@ -54,7 +54,7 @@ class ReservationTest < ActiveSupport::TestCase
             #  no user id
             reserve.user_id = ''
             assert reserve.invalid?
-            assert_equal ["user id is required"],
+            assert_equal ["can't be blank", "is not a number"],
             reserve.errors[:user_id]
           end
 

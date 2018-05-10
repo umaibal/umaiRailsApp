@@ -17,7 +17,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  no name
     resto.name = ''
     assert resto.invalid?
-    assert_equal ["restaurant name is required"],
+    assert_equal ["can't be blank"],
     resto.errors[:name]
   end
 
@@ -36,7 +36,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  no address
     resto.address = ''
     assert resto.invalid?
-    assert_equal ["restaurant address is required"],
+    assert_equal ["can't be blank"],
     resto.errors[:address]
   end
 
@@ -55,7 +55,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  no email
     resto.email = ''
     assert resto.invalid?
-    assert_equal ["restaurant email is required"],
+    assert_equal ["can't be blank"],
     resto.errors[:email]
   end
 
@@ -74,7 +74,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  no number
     resto.phoneNum = ''
     assert resto.invalid?
-    assert_equal ["restaurant phone number is required"],
+    assert_equal ["can't be blank"],
     resto.errors[:phoneNum]
   end
 
@@ -92,7 +92,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  number above 5
     resto.review = 7
     assert resto.invalid?
-    assert_equal ["restaurant review must be equal to or below 5"],
+    assert_equal ["must be less than or equal to 5"],
     resto.errors[:review]
 
     # number not whole
@@ -116,7 +116,7 @@ class RestaurantTest < ActiveSupport::TestCase
     #  no cuisineType
     resto.cuisineType = ''
     assert resto.invalid?
-    assert_equal ["restaurant cuisine type is required"],
+    assert_equal ["can't be blank"],
     resto.errors[:cuisineType]
 
     # above 75 characters

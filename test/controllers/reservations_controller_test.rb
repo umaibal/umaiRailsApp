@@ -19,7 +19,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Reservation.count') do
       post reservations_url, params: { reservation: { date: @reservation.date,
         time: @reservation.time,
-        table_id: @reservation_id.table_id,
+        table_id: @reservation.table_id,
         user_id: @reservation.user_id,
         num_guests: @reservation.num_guests} }
     end

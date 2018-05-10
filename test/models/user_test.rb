@@ -14,7 +14,7 @@ class UserTest < ActiveSupport::TestCase
       # greater than 20 chars
       user.username = 'alfalfatunisiamondayssm'
       assert user.invalid?
-      assert_equal ["user name must be less than twenty characters"],
+      assert_equal ["is too long (maximum is 20 characters)"],
       user.errors[:username]
     end
 
@@ -30,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
         # no first name
         user.firstName = ''
         assert user.invalid?
-        assert_equal ["first name is required"],
+        assert_equal ["can't be blank"],
         user.errors[:firstName]
       end
 
@@ -46,7 +46,7 @@ class UserTest < ActiveSupport::TestCase
           # no last name
           user.lastName = ''
           assert user.invalid?
-          assert_equal ["last name is required"],
+          assert_equal ["can't be blank"],
           user.errors[:lastName]
         end
 
@@ -62,7 +62,7 @@ class UserTest < ActiveSupport::TestCase
             # no email
             user.email = ''
             assert user.invalid?
-            assert_equal ["email is required"],
+            assert_equal ["can't be blank"],
             user.errors[:email]
           end
 
@@ -78,7 +78,7 @@ class UserTest < ActiveSupport::TestCase
               # no address
               user.address = ''
               assert user.invalid?
-              assert_equal ["address is required"],
+              assert_equal ["can't be blank"],
               user.errors[:address]
             end
 
@@ -94,7 +94,7 @@ class UserTest < ActiveSupport::TestCase
                 # no phoneNum
                 user.phoneNum = ''
                 assert user.invalid?
-                assert_equal ["phoneNum is required"],
+                assert_equal ["can't be blank", "is not a number"],
                 user.errors[:phoneNum]
 
                 user.phoneNum = 'areuonmimi'
@@ -115,7 +115,7 @@ class UserTest < ActiveSupport::TestCase
                   # no payment method
                   user.paymentMethod = ''
                   assert user.invalid?
-                  assert_equal ["paymentMethod is required"],
+                  assert_equal ["can't be blank"],
                   user.errors[:paymentMethod]
                 end
 
