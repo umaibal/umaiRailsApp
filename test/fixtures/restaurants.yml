@@ -2,18 +2,20 @@
 
 one:
   name: MyString
-  address: MyString
-  email: MyString
-  phoneNum: MyString
-  website: MyString
+  address: 10 Hollywood Boulevard
+  email: esto24@hotmail.com
+  phoneNum: 4166385303
+  website: www.umai.com
   review: 1
   cuisineType: MyString
+  menu: www.iii.com/menu
 
 two:
   name: MyString
-  address: MyString
-  email: MyString
-  phoneNum: MyString
-  website: MyString
+  address: 20 Hollywood Boulevard
+  email: to24@hotmail.com
+  phoneNum: 6479871230202
+  website: www.yuooo.com
   review: 1
   cuisineType: MyString
+  menu: www.uai.com/menu

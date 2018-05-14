@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
+  username: MyString2
   firstName: MyString
   lastName: MyString
-  email: MyString
-  address: MyString
-  phoneNum: MyString
-  paymentMethod: MyString
+  email: balendra@gmail.com
+  address: 15 Toronto Road
+  phoneNum: 42690548765
+  paymentMethod: Mastercard
 
 two:
-  username: MyString
+  username: MyString1
   firstName: MyString
   lastName: MyString
-  email: MyString
-  address: MyString
-  phoneNum: MyString
-  paymentMethod: MyString
+  email: umai@gmail.com
+  address: 98 Toronto Road
+  phoneNum: 42690908905
+  paymentMethod: Mastercard
