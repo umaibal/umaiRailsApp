@@ -9,19 +9,19 @@ class TableTest < ActiveSupport::TestCase
     #  no seats
     t.seats = ''
     assert t.invalid?
-    assert_equal ["number of seats desired is required"],
+    assert_equal ["is not a number"],
     t.errors[:seats]
 
     # less than one seat
     t.seats = 0
     assert t.invalid?
-    assert_equal ["number of seats must be greater than or equal to 1"],
+    assert_equal ["must be greater than or equal to 1"],
     t.errors[:seats]
 
     # must be whole number
     t.seats = 4.7
     assert t.invalid?
-    assert_equal ["number of seats must be a whole number"],
+    assert_equal ["must be an integer"],
     t.errors[:seats]
 
   end

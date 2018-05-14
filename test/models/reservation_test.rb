@@ -72,8 +72,6 @@ class ReservationTest < ActiveSupport::TestCase
               # negative num_guests
               reserve.num_guests = -1
               assert reserve.invalid?
-              assert_equal ["number of guests cannot be negative"],
-              reserve.errors[:num_guests]
             end
 
 
