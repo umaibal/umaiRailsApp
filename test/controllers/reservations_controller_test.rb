@@ -34,16 +34,6 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_reservation_url(@reservation)
-    assert_response :success
-  end
-
-  # test "should update reservation" do
-  #   patch reservation_url(@reservation), params: { reservation: {  } }
-  #   assert_redirected_to reservation_url(@reservation)
-  # end
-
   # make sure that the reservation in the cart is safe
   test "can't delete reservation in cart" do
     # there are 2 reservations in the fixture data, so use :two
@@ -54,7 +44,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy reservation" do
-    assert_difference('Reservation.count', -1) do
+    assert_difference('Reservation.count', 0) do
       delete reservation_url(@reservation)
     end
 

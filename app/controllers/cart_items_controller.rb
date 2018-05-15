@@ -27,7 +27,7 @@ class CartItemsController < ApplicationController
   # POST /cart_items
   # POST /cart_items.json
   def create
-    reservation = Reservation.find(params[:reservation_id])
+    reservation = Reservation.find(params[:id])
     @cart_item = @cart.add_reservation(reservation)
 
     respond_to do |format|
